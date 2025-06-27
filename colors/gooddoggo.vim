@@ -1,17 +1,10 @@
-"                        _                 _  __
-"                       | |               | |/ _|
-"   __ _  ___   ___   __| | __      _____ | | |_
-"  / _` |/ _ \ / _ \ / _` | \ \ /\ / / _ \| |  _|
-" | (_| | (_) | (_) | (_| |  \ V  V / (_) | | |
-"  \__, |\___/ \___/ \__,_|   \_/\_/ \___/|_|_|
-"   __/ |
-"  |___/
-"
-"     :syntax less
-"
-" A Vim colorscheme pieced together by Steve Losh.
-" Available at http://stevelosh.com/projects/badwolf/
-"
+" This is a personal fork!
+" The original is Bad Wolf by Steve Losh.
+" Available at https://github.com/sjl/badwolf
+
+" TODO: tree sitter compatibility
+" TODO: test colors in different terminal environments
+
 " Supporting code -------------------------------------------------------------
 " Preamble {{{
 
@@ -21,14 +14,24 @@ endif
 
 set background=dark
 
-if exists("syntax_on")
-    syntax reset
+" completely reset highlights to default
+highlight clear
+
+" Neovim 0.10 changed default highlight groups,
+" so this is needed to make them the same as Vim
+if has('nvim-0.10')
+    colorscheme vim
 endif
 
-let g:colors_name = "goodwolf"
+" " disabled. maybe unnecessary with 'highlight clear' above
+" if exists("syntax_on")
+"     syntax reset
+" endif
 
-if !exists("g:badwolf_html_link_underline") " {{{
-    let g:badwolf_html_link_underline = 1
+let g:colors_name = "gooddoggo"
+
+if !exists("g:baddoggo_html_link_underline") " {{{
+    let g:baddoggo_html_link_underline = 1
 endif " }}}
 
 " }}}
@@ -133,18 +136,18 @@ endfunction
 " }}}
 " Configuration Options {{{
 
-if exists('g:badwolf_lessdarkgutter') && g:badwolf_lessdarkgutter
+if exists('g:baddoggo_lessdarkgutter') && g:baddoggo_lessdarkgutter
     let s:gutter = 'blackgravel'
 else
     let s:gutter = 'blackestgravel'
 endif
 
-if exists('g:badwolf_folded')
-    if g:badwolf_folded == 0
+if exists('g:baddoggo_folded')
+    if g:baddoggo_folded == 0
         let s:folded = 'blackestgravel'
-    elseif  g:badwolf_folded == 1
+    elseif  g:baddoggo_folded == 1
         let s:folded = 'blackgravel'
-    elseif  g:badwolf_folded == 2
+    elseif  g:baddoggo_folded == 2
         let s:folded = 'darkgravel'
     else
         let s:folded = 'blackgravel'
@@ -153,14 +156,14 @@ else
     let s:folded = 'blackgravel'
 endif
 
-if exists('g:badwolf_tabline')
-    if g:badwolf_tabline == 0
+if exists('g:baddoggo_tabline')
+    if g:baddoggo_tabline == 0
         let s:tabline = 'blackestgravel'
-    elseif  g:badwolf_tabline == 1
+    elseif  g:baddoggo_tabline == 1
         let s:tabline = 'blackgravel'
-    elseif  g:badwolf_tabline == 2
+    elseif  g:baddoggo_tabline == 2
         let s:tabline = 'darkgravel'
-    elseif  g:badwolf_tabline == 3
+    elseif  g:baddoggo_tabline == 3
         let s:tabline = 'deepgravel'
     else
         let s:tabline = 'blackestgravel'
@@ -280,16 +283,16 @@ call s:HL('Error',  'snow',   'taffy', 'bold')
 call s:HL('Debug',  'snow',   '',      'bold')
 call s:HL('Ignore', 'gravel', '',      '')
 
-let g:goodwolf_string_style = 'bold'
+let g:gooddoggo_string_style = 'bold'
 
-function GoodWolfToggleBoldStrings()
-    if g:goodwolf_string_style == 'bold'
-        let g:goodwolf_string_style = 'none'
+function GoodDoggoToggleBoldStrings()
+    if g:gooddoggo_string_style == 'bold'
+        let g:gooddoggo_string_style = 'none'
     else
-        let g:goodwolf_string_style = 'bold'
+        let g:gooddoggo_string_style = 'bold'
     endif
 
-    call s:HL('String', 'lightgravel', '', g:goodwolf_string_style)
+    call s:HL('String', 'lightgravel', '', g:gooddoggo_string_style)
 endfunction
 
 " }}}
@@ -445,7 +448,7 @@ call s:HL('htmlArg', 'coffee', '', 'none')
 
 " Stuff inside an <a> tag
 
-if g:badwolf_html_link_underline
+if g:baddoggo_html_link_underline
     call s:HL('htmlLink', 'lightgravel', '', 'underline')
 else
     call s:HL('htmlLink', 'lightgravel', '', 'none')
@@ -513,7 +516,7 @@ call s:HL('texDelimiter', 'orange', '', 'none')
 call s:HL('texZone', 'brightgravel', '', 'none')
 call s:HL('texTabularChar', 'lime', '', 'none')
 
-augroup badwolf_tex
+augroup baddoggo_tex
     au!
 
     au BufRead,BufNewFile *.tex syn region texMathZoneV start="\\(" end="\\)\|%stopzone\>" keepend contains=@texMathZoneGroup

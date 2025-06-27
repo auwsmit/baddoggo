@@ -29,38 +29,38 @@ what you're in for.
 Configuration
 -------------
 
-There are a few settings you can use to tweak how Bad Wolf looks.
+There are a few settings you can use to tweak how Bad Doggo looks.
 
-### g:badwolf\_darkgutter
+### g:baddoggo\_darkgutter
 
 Determines whether the line number, sign column, and fold column are rendered
 darker than the normal background, or the same.
 
     " Make the gutters the same color as the background.
-    let g:badwolf_lessdarkgutter = 1
+    let g:baddoggo_lessdarkgutter = 1
 
 Default: `0` (off, gutters are darker than the background)
- ### g:badwolf\_folded
+ ### g:baddoggo\_folded
 
 Determines the background color of folded lines.
 
 Can be set to `0`, `1`, or `2`
 
     " Make folded lines darker than the background.
-    let g:badwolf_folded = 0
+    let g:baddoggo_folded = 0
 
     " Make folded lines the same color as the background.
-    let g:badwolf_folded = 1
+    let g:baddoggo_folded = 1
 
     " Make folded lines lighter than the background.
-    let g:badwolf_folded = 2
+    let g:baddoggo_folded = 2
 
     " Make folded lines much lighter than the background.
-    let g:badwolf_folded = 3
+    let g:baddoggo_folded = 3
 
 Default: `1` (same color as the background)
 
-### g:badwolf\_tabline
+### g:baddoggo\_tabline
 
 Determines how light to render the background of the tab line (the line at the
 top of the screen containing the various tabs (only in console mode)).
@@ -68,34 +68,34 @@ top of the screen containing the various tabs (only in console mode)).
 Can be set to `0`, `1`, `2`, or `3`.
 
     " Make the tab line darker than the background.
-    let g:badwolf_tabline = 0
+    let g:baddoggo_tabline = 0
 
     " Make the tab line the same color as the background.
-    let g:badwolf_tabline = 1
+    let g:baddoggo_tabline = 1
 
     " Make the tab line lighter than the background.
-    let g:badwolf_tabline = 2
+    let g:baddoggo_tabline = 2
 
     " Make the tab line much lighter than the background.
-    let g:badwolf_tabline = 3
+    let g:baddoggo_tabline = 3
 
 Default: `1` (same color as the background)
 
-### g:badwolf\_html\_link\_underline
+### g:baddoggo\_html\_link\_underline
 
 Determines whether text inside `a` tags in HTML files will be underlined.
 
     " Turn off HTML link underlining
-    let g:badwolf_html_link_underline = 0
+    let g:baddoggo_html_link_underline = 0
 
 Default: `1` (on)
 
-### g:badwolf\_css\_props\_highlight
+### g:baddoggo\_css\_props\_highlight
 
 Determines whether CSS properties should be highlighted.
 
     " Turn on CSS properties highlighting
-    let g:badwolf_css_props_highlight = 1
+    let g:baddoggo_css_props_highlight = 1
 
 Default: `0` (off)
 

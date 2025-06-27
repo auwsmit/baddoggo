@@ -1,6 +1,6 @@
 " This is a personal fork!
 " The original is Bad Wolf by Steve Losh.
-" Available at http://stevelosh.com/projects/baddoggo/
+" Available at https://github.com/sjl/badwolf
 
 " TODO: tree sitter compatibility
 " TODO: test colors in different terminal environments
@@ -22,7 +22,6 @@ highlight clear
 if has('nvim-0.10')
     colorscheme vim
 endif
-
 
 " " disabled. maybe unnecessary with 'highlight clear' above
 " if exists("syntax_on")
@@ -148,12 +147,12 @@ else
     let s:gutter = 'blackestgravel'
 endif
 
-if exists('g:badwolf_folded')
-    if g:badwolf_folded == 0
+if exists('g:baddoggo_folded')
+    if g:baddoggo_folded == 0
         let s:folded = 'blackestgravel'
-    elseif  g:badwolf_folded == 1
+    elseif  g:baddoggo_folded == 1
         let s:folded = 'blackgravel'
-    elseif  g:badwolf_folded == 2
+    elseif  g:baddoggo_folded == 2
         let s:folded = 'darkgravel'
     else
         let s:folded = 'blackgravel'
