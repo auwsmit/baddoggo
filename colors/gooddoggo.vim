@@ -2,9 +2,6 @@
 " The original is Bad Wolf by Steve Losh.
 " Available at https://github.com/sjl/badwolf
 
-" TODO: tree sitter compatibility
-" TODO: test colors in different terminal environments
-
 " Supporting code -------------------------------------------------------------
 " Preamble {{{
 
@@ -14,19 +11,19 @@ endif
 
 set background=dark
 
-" completely reset highlights to default
 highlight clear
-
-" Neovim 0.10 changed default highlight groups,
-" so this is needed to make them the same as Vim
-if has('nvim-0.10')
-    colorscheme vim
+if exists("syntax_on")
+    syntax reset
 endif
 
-" " disabled. maybe unnecessary with 'highlight clear' above
-" if exists("syntax_on")
-"     syntax reset
-" endif
+" Neovim 0.10 changed default highlight groups,
+" so this is needed to make them the more like Vim
+"
+" just running `:colorscheme vim` doesn't work,
+" so source a local copy as a workaround
+if has('nvim-0.10')
+    exec 'luafile '. expand('<script>:p:h') .'/vim.lua'
+endif
 
 let g:colors_name = "gooddoggo"
 
