@@ -1,17 +1,8 @@
-Bad Wolf
-========
+Bad Doggo
+=========
 
-A color scheme for Vim, pieced together by [Steve Losh](http://stevelosh.com/).
+This is a personal fork of [Bad Wolf](https://github.com/sjl/badwolf). A color scheme for Vim, originally pieced together by [Steve Losh](http://stevelosh.com/).
 
-There's still quite a lot of room for improvement (particularly in HTML) so feel
-free to send me ideas through the [issue tracker][] or pull requests.
-
-It's MIT/X11 licensed, so feel free to hack it apart if you like.
-
-**If you're going to send a pull request that you want me to merge, please post
-a comment in it with before/after screenshots!**
-
-[issue tracker]: http://github.com/sjl/badwolf/issues
 
 Screenshots
 -----------
@@ -45,10 +36,29 @@ There are a few settings you can use to tweak how Bad Wolf looks.
 Determines whether the line number, sign column, and fold column are rendered
 darker than the normal background, or the same.
 
-    " Make the gutters darker than the background.
-    let g:badwolf_darkgutter = 1
+    " Make the gutters the same color as the background.
+    let g:badwolf_lessdarkgutter = 1
 
-Default: `0` (off, gutters are the same as the background)
+Default: `0` (off, gutters are darker than the background)
+ ### g:badwolf\_folded
+
+Determines the background color of folded lines.
+
+Can be set to `0`, `1`, or `2`
+
+    " Make folded lines darker than the background.
+    let g:badwolf_folded = 0
+
+    " Make folded lines the same color as the background.
+    let g:badwolf_folded = 1
+
+    " Make folded lines lighter than the background.
+    let g:badwolf_folded = 2
+
+    " Make folded lines much lighter than the background.
+    let g:badwolf_folded = 3
+
+Default: `1` (same color as the background)
 
 ### g:badwolf\_tabline
 
